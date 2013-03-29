@@ -80,4 +80,4 @@ class TodosController < ApplicationController
       format.json { head :no_content }
     end
   end
-end
+end # end of Class end
