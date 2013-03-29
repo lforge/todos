@@ -21,17 +21,20 @@
     </header>
     <div id="main" role="main">
       <div class="container-fluid">
-        <div class="content">
-           <div class="row">
-            <div class="span12">
-              <%= render 'layouts/messages' %>
+        <div class="row-fluid">
+          <div id = "sidebar" class = "span2">
+this is sidebar
+          </div> <!-- end of .span2 -->
+          <div id = "mainContent" class = "span10">
+            <div class="content">
+              <%= render 'layouts/messages', flash: flash %>
               <%= yield %>
-            </div>
-          </div>
-          <footer>
-          </footer>
-        </div>
-      </div> <!--! end of .container -->
+              <footer>
+              </footer>
+            </div> <!-- end of .content -->
+          </div> <!-- end of .span10 -->
+        </div> <!--! end of .row-fluid -->
+      </div> <!--! end of .container-fluid -->
     </div> <!--! end of #main -->
     
         <%= javascript_include_tag "application" %>

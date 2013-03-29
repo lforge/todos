@@ -1,0 +1,23 @@
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+              <%= render 'layouts/messages', flash: flash %>
+              <%= yield %>
+            </div>
+          </div>
+          <footer>
+          </footer>
+        </div> <!-- end of .content -->
+
+JSON from index.
+
+[
+ {"completed":false,"created_at":"2013-03-29T21:09:18Z","due_on":"2013-03-29","id":5,"name":"TEST223","updated_at":"2013-03-29T21:23:51Z"}
+,{"completed":false,"created_at":"2013-03-29T21:09:49Z","due_on":"2013-03-29","id":6,"name":"TEST3","updated_at":"2013-03-29T21:09:49Z"}
+,{"completed":false,"created_at":"2013-03-29T21:11:53Z","due_on":"2013-03-29","id":7,"name":"TEST1","updated_at":"2013-03-29T21:11:53Z"}
+,{"completed":false,"created_at":"2013-03-29T21:12:58Z","due_on":"2013-03-29","id":8,"name":"TEST4","updated_at":"2013-03-29T21:12:58Z"}
+,{"completed":false,"created_at":"2013-03-29T21:13:31Z","due_on":"2013-03-29","id":9,"name":"TEST5","updated_at":"2013-03-29T21:13:31Z"}
+,{"completed":false,"created_at":"2013-03-29T21:17:47Z","due_on":"2013-03-29","id":12,"name":"TEST67","updated_at":"2013-03-29T21:17:47Z"}
+,{"completed":false,"created_at":"2013-03-29T21:18:30Z","due_on":"2013-03-29","id":13,"name":"Test877","updated_at":"2013-03-29T21:23:35Z"}
+,{"completed":false,"created_at":"2013-03-29T21:39:01Z","due_on":"2012-03-29","id":14,"name":"Test10","updated_at":"2013-03-29T21:39:01Z"}
+]

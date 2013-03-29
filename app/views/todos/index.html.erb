@@ -1,18 +1,19 @@
-<h1>Listing todos</h1>
-
-<table>
+<h2>Listing todos</h2>
+<style>table {table-layout: fixed;}</style>
+<table class="table table-hover table-condensed"> <!- modified to add bootstrap classes->
   <tr>
-    <th>Name</th>
-    <th>Due on</th>
-    <th>Completed</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th style="width: 40%">Name</th>
+    <th style="width: 15%">Due on</th>
+    <th style="width: 15%">Completed</th>
+    <th style="width: 10%"></th>
+    <th style="width: 10%"></th>
+    <th style="width: 10%"></th>
   </tr>
 
 <% @todos.each do |todo| %>
+<!- The TD is style so that it will wrap long value.->
   <tr>
-    <td><%= todo.name %></td>
+    <td style="word-wrap:break-word"><%= todo.name %></td>
     <td><%= todo.due_on %></td>
     <td><%= todo.completed %></td>
     <td><%= link_to 'Show', todo %></td>

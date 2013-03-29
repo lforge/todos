@@ -2,7 +2,9 @@ class TodosController < ApplicationController
   # GET /todos
   # GET /todos.json
   def index
-    @todos = Todo.all
+    #@todos = Todo.all
+    # Jude modify it to sort by 
+    @todos = Todo.order('name')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +46,12 @@ class TodosController < ApplicationController
 
     respond_to do |format|
       if @todo.save
-        format.html { redirect_to @todo, notice: 'Todo was successfully created.' }
+        
+        v_toDoName = @todo.name
+        
+        #format.html { redirect_to @todo, notice: 'Todo was successfully created.' }
+        # Jude Lam modify it to render action index instead.
+        format.html { redirect_to todos_url, notice: 'Todo ' + v_toDoName + ' was successfully created.' }
         format.json { render json: @todo, status: :created, location: @todo }
       else
         format.html { render action: "new" }
@@ -60,7 +67,11 @@ class TodosController < ApplicationController
 
     respond_to do |format|
       if @todo.update_attributes(params[:todo])
-        format.html { redirect_to @todo, notice: 'Todo was successfully updated.' }
+        v_toDoName = @todo.name
+        
+        ##format.html { redirect_to @todo, notice: 'Todo ' + v_toDoName + ' was successfully updated.' }
+        #Jude Lam modify this to redirect to index and add the v_toDoName.
+        format.html { redirect_to todos_url, notice: 'Todo ' + v_toDoName + ' was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -73,10 +84,12 @@ class TodosController < ApplicationController
   # DELETE /todos/1.json
   def destroy
     @todo = Todo.find(params[:id])
+    v_toDoName = @todo.name
+    
     @todo.destroy
 
     respond_to do |format|
-      format.html { redirect_to todos_url }
+      format.html { redirect_to todos_url, notice: 'Todo ' + v_toDoName + ' was successfully deleted.' }
       format.json { head :no_content }
     end
   end
