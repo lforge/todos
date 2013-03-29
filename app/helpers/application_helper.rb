@@ -1,3 +1,6 @@
+#the following code is copied from
+#roberto / _flash_messages.html.erb github posting.
+#github link is: https://gist.github.com/roberto/3344628
 module ApplicationHelper
   def bootstrap_class_for flash_type
     case flash_type
